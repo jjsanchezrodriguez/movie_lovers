@@ -21,9 +21,9 @@ class MovieCatalog
 			if (movies[i].poster!= nil)
 				my_mock.add_movie(Movie.new(movies[i].title, movies[i].poster,movies[i].year))
 				i = i+1
-			end				
+			end	
 		end
-		my_mock.show
+		my_mock
 	end
 end
 
@@ -37,6 +37,7 @@ class Movie
 end
 
 class Mock
+	attr_reader :movies
 	def initialize(movies = [])
 		@movies = movies
 	end
@@ -54,9 +55,7 @@ class Mock
 	end
 end
 
-probando = MovieCatalog.new(IMDBMoviCatalog.new)
 
-probando.search("love")
 
 
 

@@ -5,10 +5,13 @@ require "sinatra/reloader" if development?
 enable(:sesions)
 
 require_relative('./lib/leer_imdb.rb')
-require_relative('./lib/blog.rb')
-blog  = Blog.new()
+
+movies = MovieCatalog.new(IMDBMoviCatalog.new)
+
 
 get "/" do
-	@my_blog = blog
+	@my_movies = movies
+	@result = @my_movies.search("love")
+	
 	erb :index
 end

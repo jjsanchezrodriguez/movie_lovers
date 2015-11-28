@@ -6,46 +6,39 @@
       <link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel = "stylesheet" href="/css/style.css">
 
-    <title>Sinatra Blog</title> 
+    <title>Movie Lovers</title> 
   </head>
 
   <body>
     <div class = "container-fluid">
 
       <header class = "row">
-        <h1>Sinatra Blog</h1>
+        <h1>Movie Lovers</h1>
       </header> 
 
        <nav class = "row">
           <div class="col-sm-8"> 
             <form action="/sort" method="POST">
-              <button type="submit" class="btn btn-primary my-btn-default background-opacity-1">Ordenar</button>
+              
             </form>
           </div>
 
-          <div class="col-sm-4">
-            <button type="button" class="btn btn-primary my-btn-default background-opacity-1">Imagenes</button>
-            <button type="button" class="btn btn-primary my-btn-default background-opacity-1">Lugares</button>
-            <button type="button" class="btn btn-primary my-btn-default background-opacity-1">Contactos</button>
-          </div>
+          
       </nav>  
 
       <section class = "row">
         <div class="col-sm-9">
-           <% @my_blog.posts.each_with_index do |post, index|%>
-            <article class = "post">
-              <div class = "title"> <a href="/show/<%=index%>"><%="#{post.title}"%> </a></div>
-            </article> 
-          <% end %>
+           <%@result.movies.each do |movie|%>
+            <article class="movie">
+             <div class = "my_title"> <%="#{movie.title}"%> </div>
+              <div class = "image"> <img src=<%="#{movie.poster}"%> ></div>
+              <div class = "year"> <%="#{movie.year}"%> </div>
+            </article>
+          <%end%>
         </div>
 
         <div class="col-sm-3">
-          <aside class="miscelania">
-            <h3> Hola que tal</h3>
-            <div class = "img">
-              <img src = "/images/tiacarmen.jpg">
-            </div>
-          </aside>
+         
         </div> 
       </section>
 
