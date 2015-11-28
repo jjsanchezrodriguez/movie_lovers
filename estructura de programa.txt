@@ -1,0 +1,31 @@
+1 crear la estructura de carpeteas
+
+	lib -->   Contien las clases de mi programa, (---MODELO---)
+	spec ->   Contine los fichero .rb para las pruebas, hay que añadir los require_relative "../lib/fichero rb con las clases de 				nuestro programa" y tambien contine require "spec_helper
+	views --> contine los .erb encargados de la visualizacion (---VISTA---)
+		img
+		css
+	Gemfile --> Añadimos las gemas que nos hagan falta p.e. gem "sinatra"
+	server.rb --> Nos permite acceder a las vistas de views y las clases de lib (---CONTROLADOR---) 
+			añadimos: require 'sinatra' 	require 'pry'  para poder utilizarlas
+			añadimos:  require "sinatra/reloader" if development? para automatizar el arranque del servidor 
+			si vamos a utilizar sesiones: enable(:sesions)
+			y tenemos que añadir los ficheros .rb a los que queremos acceder:
+				require_relative('./lib/fichero1_con_clases.rb')
+				require_relative('./lib/fichero2_con_clases.rb')
+
+
+CUIDADO CON LOS PERMISOS!!!!!
+
+2. Dependencias de entre gemas del Gemfile
+	gem install bundler --> este solo hay que instalarlo una vez.
+	bundle install --> para descargar las dependencias
+
+4. Instalar y arrancar spec
+	gem install rspec  (No hace falta si lo hemos añadido en el Gemfile)
+	spec --init
+
+3. Automatizar los test
+	bundle exec guard init
+	bundle exec guard
+	
