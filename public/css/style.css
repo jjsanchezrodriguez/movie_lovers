@@ -1,0 +1,169 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+div.container-fluid {
+	background: #f7f7f7;
+	font-family:sans-serif;
+	font-size: 1.1em;
+	color: #999;
+	margin: 0px;
+	padding: 0px 75px;
+
+}
+header {
+	padding: 7px;
+	
+}
+
+header h1{
+	text-align: center;
+	font-variant: small-caps;
+}
+
+nav, footer { 
+   border-top: 1px solid #dbdbdb;
+   border-bottom: 1px solid #dbdbdb; 
+   background: #eaeaea;
+   margin-bottom: 25px;
+   padding: 5px 0px 5px 25px;
+   }
+
+.my-btn-default {
+	background-color: rgba(255,255,255,0);
+	color: #6d6868;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+.background-opacity-1 {
+	background: rgba(255,255,255,0.1);
+}
+
+article.post {
+	border: 1px solid gray;
+	margin-bottom: 20px;
+	border-radius: 3px;
+}
+
+aside {
+	border: 1px solid gray;
+	text-align: center;
+}
+
+.img {
+	margin: 0 auto;
+	height: 150px;
+	width: 150px;
+}
+
+img{
+	height: 100%;
+	width: 100%;
+}
+
+
+.background-opacity-1{
+	background: rgba(255,255,255,0.1);
+}
+
+.background-opacity-2{
+	background: rgba(255,255,255,0.2);
+}
+
+.left {
+	float:left;
+}
+
+.form_class {
+	margin-bottom: 30px;
+
+}
+/*
+
+.my-input{
+	width: 150px;
+	border: 0px;
+	color: white;
+	font-weight: bold;
+	padding-top: -10
+}
+.my-width{
+	width : 150px;
+}
+.my-rigth{
+	text-align: right;
+}
+
+.bigger-text{
+	font-size: 1.4em;
+}
+
+.reduce-text{
+	font-size: 0.8em;
+}
+
+.my-padding{
+	padding: 8px 15px;
+}
+.my-margin{
+	margin: 8px 15px;
+}
+
+.recude{
+	height:200px;
+	width:200px;
+}
+
+.contenedor-caja{
+	background-color: #E2E4E6;
+	font-weight: bold;
+	font-size: 1.2em;
+	color:#000;
+	margin: 7px;
+	border-radius: 3px;
+	margin-bottom: 175px;
+}
+.caja{
+	background-color: #FFF;
+	color:#000;
+	padding:3px 10px;
+	margin:10px 0px;
+	font-size: 0.9em;
+	font-weight: normal;
+	border-radius: 3px;
+}
+.caja:hover{
+	background-color: #EDEFF0;
+}
+.panel{
+	height: 8px;
+	width: 50px;
+	border-radius: 2px;
+	margin: 5px 0px 3px 0px;
+}
+.morado{
+		background-color: #C377E0;
+}
+
+.verde{
+		background-color: #51E898;
+}
+
+.rosa{
+		background-color: #FF80CE;
+}
+
+.azul{
+		background-color: #00C2E0;
+}
+ 
+.naranja{
+		background-color: #FFAB4A;
+}
+
+.img-arbol{
+	width:99%;
+}
+
+   */

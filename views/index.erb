@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset="utf-8">
+
+      <link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel = "stylesheet" href="/css/style.css">
+
+    <title>Sinatra Blog</title> 
+  </head>
+
+  <body>
+    <div class = "container-fluid">
+
+      <header class = "row">
+        <h1>Sinatra Blog</h1>
+      </header> 
+
+       <nav class = "row">
+          <div class="col-sm-8"> 
+            <form action="/sort" method="POST">
+              <button type="submit" class="btn btn-primary my-btn-default background-opacity-1">Ordenar</button>
+            </form>
+          </div>
+
+          <div class="col-sm-4">
+            <button type="button" class="btn btn-primary my-btn-default background-opacity-1">Imagenes</button>
+            <button type="button" class="btn btn-primary my-btn-default background-opacity-1">Lugares</button>
+            <button type="button" class="btn btn-primary my-btn-default background-opacity-1">Contactos</button>
+          </div>
+      </nav>  
+
+      <section class = "row">
+        <div class="col-sm-9">
+           <% @my_blog.posts.each_with_index do |post, index|%>
+            <article class = "post">
+              <div class = "title"> <a href="/show/<%=index%>"><%="#{post.title}"%> </a></div>
+            </article> 
+          <% end %>
+        </div>
+
+        <div class="col-sm-3">
+          <aside class="miscelania">
+            <h3> Hola que tal</h3>
+            <div class = "img">
+              <img src = "/images/tiacarmen.jpg">
+            </div>
+          </aside>
+        </div> 
+      </section>
+
+      <footer class = "row">
+       
+        <form action="/form_add" method="POST">
+          <button type="submit" class="btn btn-primary my-btn-default background-opacity-1">Nuevo</button>
+        </form>
+       
+      </footer>  
+    </div> <!-- fin del container-fluid   -->
+  </body>
+</html>

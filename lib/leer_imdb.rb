@@ -4,7 +4,7 @@ require "pry"
 class IMDBMoviCatalog
 	def search(title)
 		search = Imdb::Search.new(title)
-		movie_titles = search.movies.map{|movie| movie.title}	
+		movies = search.movies.map{|movie| movie}	
 	end	
 end
 
@@ -14,12 +14,49 @@ class MovieCatalog
 	end
 
 	def search(title_search)
-		movie_titles = @movie_db.search(title_search)
-		binding.pry
-		movie_titles.each { |title| puts title  }
+		movies = @movie_db.search(title_search)
+		i = 0
+		my_mock = Mock.new
+		while (i<9 && i<movies.size)
+			if (movies[i].poster!= nil)
+				my_mock.add_movie(Movie.new(movies[i].title, movies[i].poster,movies[i].year))
+				i = i+1
+			end				
+		end
+		my_mock.show
+	end
+end
+
+class Movie
+	attr_accessor :title, :poster, :year
+	def initialize(title,poster,year)
+		@title = title
+		@poster = poster
+		@year = year
+	end
+end
+
+class Mock
+	def initialize(movies = [])
+		@movies = movies
+	end
+
+	def add_movie(movie)
+		@movies << movie
+	end
+	
+	def show
+		@movies.each do |movie| 
+			puts movie.title
+			puts movie.poster
+			puts movie.year
+		end	
 	end
 end
 
 probando = MovieCatalog.new(IMDBMoviCatalog.new)
 
-probando.search("Spectre")
+probando.search("love")
+
+
+
