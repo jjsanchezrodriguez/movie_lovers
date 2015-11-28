@@ -16,12 +16,14 @@ class MovieCatalog
 	def search(title_search)
 		movies = @movie_db.search(title_search)
 		i = 0
+		j=0
 		my_mock = Mock.new
-		while (i<9 && i<movies.size)
+		while (j<9 && i<movies.size)
 			if (movies[i].poster!= nil)
 				my_mock.add_movie(Movie.new(movies[i].title, movies[i].poster,movies[i].year))
-				i = i+1
+				j = j+1
 			end	
+			i=i+1
 		end
 		my_mock
 	end
@@ -54,8 +56,5 @@ class Mock
 		end	
 	end
 end
-
-
-
 
 

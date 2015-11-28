@@ -27,7 +27,17 @@
 
           
         
-          
+           <%@result.movies.each_with_index do |movie, index|%>
+             <!--  <%if index % 3 == 0%>
+                <div class = "row">
+              <%end%> -->
+            
+                <article class="movies col-sm-4">
+                  <div class = "image "> <img src=<%="#{movie.poster}"%> ></div>
+                </article>
+
+              
+          <%end%>
        
 
         

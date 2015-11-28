@@ -10,8 +10,14 @@ movies = MovieCatalog.new(IMDBMoviCatalog.new)
 
 
 get "/" do
-	@my_movies = movies
-	@result = @my_movies.search("love")
+	 
+	
 	
 	erb :index
+end
+
+post "/find" do
+	@my_movies = movies
+	@result = @my_movies.search(params[:text])
+	erb :find
 end
